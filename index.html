@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diverse Image</title>
+
+  <link rel="stylesheet" href="diverse2.css"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<body>
+  
+<section id="loginPage" class="page ">
+
+  <div class="login-box">
+
+    <h2>Admin Login</h2>
+
+    <input type="email" id="email"
+    placeholder="Email">
+
+    <input type="password" id="password"
+    placeholder="Password">
+
+    <button onclick="login()">
+      Login
+    </button>
+</div>
+</section>
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+
+  <div class="logo">
+    <div class="menu-btn" onclick="toggleMobileMenu()">
+  <i class="fa-solid fa-bars"></i>
+</div>
+     <button onclick="openAdmin()">
+    <i class="fa-solid fa-camera"></i>
+    </button>
+    <div>
+      <h4>DIVERSE IMAGE</h4>
+      <p>Photography</p>
+    </div>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <button onclick="showPage('home')">  <i class="fa-solid fa-home"></i> HOME</button>
+    <button onclick="showPage('pictures')">  <i class="fa-solid fa-images"></i> PICTURES</button>
+    <button onclick="showPage('videos')">  <i class="fa-solid fa-video"></i> VIDEOS</button>
+    <button onclick="showPage('about')">  <i class="fa-solid fa-info-circle"></i> ABOUT</button>
+  </div>
+
+   <button class="btn outline"> <a href="https://wa.me/2349117564356?text=pls%20can%20I%20know%20more%20about%20your%20photography%20and%20pricing" target="_blank" class="btn outline">Book Session</a>
+    </button>
+
+</nav>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="page active">
+
+  <div class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-left">
+
+        <h1>
+          CAPTURING <br>
+          <span>Timeless</span> <br>
+          MOMENTS
+        </h1>
+
+        <p>
+          We turn your most precious moments
+          into timeless memories.
+        </p>
+
+        <div class="hero-buttons">
+          <button onclick="showPage('pictures')" class="gold-btn">
+            VIEW GALLERY
+          </button>
+
+   <button class="btn outline"> <a href="https://wa.me/2349117564356?text=pls%20can%20I%20know%20more%20about%20your%20photography%20and%20pricing" class="btn outline"> BOOK A SESSION</a>
+    </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+
+    <div class="stat-box">
+      <i class="fa-solid fa-users"></i>
+      <h2>500+</h2>
+      <p>Clients</p>
+    </div>
+
+    <div class="stat-box">
+      <i class="fa-solid fa-camera"></i>
+      <h2>3+</h2>
+      <p>Years</p>
+    </div>
+
+    <div class="stat-box">
+      <i class="fa-solid fa-image"></i>
+      <h2>850+</h2>
+      <p>Shots</p>
+    </div>
+
+    <div class="stat-box">
+      <i class="fa-solid fa-star"></i>
+      <h2>4.9</h2>
+      <p>Rating</p>
+    </div>
+
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="categories">
+<h2>OUR <span>CATEGORIES</span></h2>
+
+<div class="category-grid">
+
+  <!-- WEDDING -->
+  <div class="category-card"
+  onclick="openCategory('Wedding','Couple')">
+
+    <img
+    id="WeddingPreview"
+    src="https://images.unsplash.com/photo-1519741497674-611481863552">
+
+    <div class="category-content">
+      <h3>WEDDING</h3>
+      <p>Memories to last</p>
+    </div>
+
+  </div>
+
+  <!-- BIRTHDAY -->
+  <div class="category-card"
+  onclick="openCategory('Birthday','Girls')">
+
+    <img
+    id="BirthdayPreview"
+    src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3">
+
+    <div class="category-content">
+      <h3>BIRTHDAY</h3>
+      <p>Celebrate in style</p>
+    </div>
+
+  </div>
+
+  <!-- PORTRAITS -->
+  <div class="category-card"
+  onclick="openCategory('Portraits','Female')">
+
+    <img
+    id="PortraitsPreview"
+    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+
+    <div class="category-content">
+      <h3>PORTRAITS</h3>
+      <p>Your best self</p>
+    </div>
+
+  </div>
+
+  <!-- FAMILY -->
+  <div class="category-card"
+  onclick="openCategory('Family','Parents')">
+
+    <img
+    id="FamilyPreview"
+    src="https://images.unsplash.com/photo-1511895426328-dc8714191300">
+
+    <div class="category-content">
+      <h3>FAMILY</h3>
+      <p>Together is everything</p>
+    </div>
+
+  </div>
+
+  <!-- LIFESTYLE -->
+  <div class="category-card"
+  onclick="openCategory('Lifestyle','Fashion')">
+
+    <img
+    id="LifestylePreview"
+    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+    <div class="category-content">
+      <h3>LIFESTYLE</h3>
+      <p>Live your story</p>
+    </div>
+
+  </div>
+
+  <!-- EVENTS -->
+  <div class="category-card"
+  onclick="openCategory('Events','Concert')">
+
+    <img
+    id="EventsPreview"
+    src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30">
+
+    <div class="category-content">
+      <h3>EVENTS</h3>
+      <p>Every moment matters</p>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PICTURES ================= -->
+<section id="pictures" class="page">
+ 
+
+  <h1 class="page-title">
+    PICTURES GALLERY
+  </h1>
+
+  <div class="tabs" id="pictureTabs"></div>
+
+  <div class="sub-tabs" id="subTabs"></div>
+
+  <div class="gallery" id="gallery"></div>
+
+</section>
+
+<!--================= VIDEOS =================-->
+<!-- ================= VIDEOS ================= -->
+<section id="videos" class="page">
+
+  <h1 class="page-title">
+    VIDEOS GALLERY
+  </h1>
+
+  <!-- VIDEO CATEGORY BUTTONS -->
+  <div class="tabs" id="videoTabs"></div>
+
+  <!-- VIDEO GRID -->
+  <div class="video-grid" id="videoGrid"></div>
+
+</section>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="page">
+
+  <div class="about-container">
+
+    <div class="about-text">
+
+      <p class="small-title">
+        ABOUT ME
+      </p>
+
+      <h1>
+        HAY! I'M EMMANUEL <br>
+        <span> A PHOTOGRAPHER</span>
+      </h1>
+
+      <p>
+        
+       I'm a passionate storyteller who captures timeless, emotional moments.
+        Every shot is crafted with precision, creativity, and passion.
+        I specialize in wedding, portrait, and lifestyle photography, creating stunning visuals that tell your unique story.
+      </p>
+
+      <div class="socials">
+
+      
+          
+        <a href="https://www.facebook.com/share/1AunWFpEsU/" target="_blank"><i class="fab fa-facebook"></i></a>
+        
+     
+        <a href="https://www.instagram.com/diver_seimage?igsh=MTJwdzNINXE3dWp4dg==" target="_blank"><i class="fab fa-instagram"></i></a>
+      
+        
+        <a href="https://x.com/BChiazoka87714" target="_blank"><i class="fab fa-x-twitter"></i></a>
+     
+
+      </div>
+
+    </div>
+
+    <img class="about-img"
+    src="camera.jpg">
+
+  </div>
+
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+ 
+
+  </div>
+
+
+<section id="dashboard" class="page">
+  
+<div class="mobile-menu" onclick="toggleSidebar()">
+  <i class="fa-solid fa-bars"></i>
+</div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <h2>DASHBOARD</h2>
+
+    <button onclick="openDash('analytics')">
+      Analytics
+    </button>
+
+    <button onclick="openDash('adsense')">
+      Adsense
+    </button>
+
+    <button onclick="openDash('categories')">
+      Top Categories
+    </button>
+
+    <button onclick="openDash('media')">
+      Media Library
+    </button>
+
+    <button onclick="openDash('delete')">
+      Delete
+    </button>
+
+    <button onclick="openDash('settings')">
+      Settings
+    </button>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="dash-main">
+
+    <!-- ANALYTICS -->
+    <div id="analytics" class="dash-page activeDash">
+
+      <div class="dash-cards">
+
+        <div class="dash-card">
+          <h3>Total Visitors</h3>
+          <h1>2,543</h1>
+        </div>
+
+        <div class="dash-card">
+          <h3>Total Images</h3>
+          <h1>128</h1>
+        </div>
+
+        <div class="dash-card">
+          <h3>Total Videos</h3>
+          <h1>36</h1>
+        </div>
+
+        <div class="dash-card">
+          <h3>Total Bookings</h3>
+          <h1>18</h1>
+        </div>
+
+      </div>
+
+      <div class="chart-grid">
+
+        <div class="chart-box">
+          <h2>Analytics Overview</h2>
+          <canvas id="lineChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+          <h2>Traffic Source</h2>
+          <canvas id="pieChart"></canvas>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ADSENSE -->
+    <div id="adsense" class="dash-page">
+
+      <div class="chart-box">
+        <h2>Adsense Eligibility</h2>
+
+        <div class="eligibility">
+
+          <p>Content Quality <span>Good</span></p>
+          <p>Visitor Traffic <span>Good</span></p>
+          <p>User Experience <span>Good</span></p>
+          <p>Privacy Compliance <span>Good</span></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TOP CATEGORIES -->
+    <div id="categories" class="dash-page">
+
+      <div class="chart-box">
+
+        <h2>Top Categories</h2>
+
+        <ul class="top-list">
+          <li>Wedding - 120 uploads</li>
+          <li>Birthday - 90 uploads</li>
+          <li>Family - 80 uploads</li>
+          <li>Lifestyle - 60 uploads</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- MEDIA -->
+<div class="chart-box">
+
+  <div class="upload-area">
+
+    <h3>Upload Image</h3>
+
+    <select id="imageCategory">
+
+      <option value="Wedding">Wedding</option>
+      <option value="Birthday">Birthday</option>
+      <option value="Portraits">Portraits</option>
+      <option value="Family">Family</option>
+      <option value="Lifestyle">Lifestyle</option>
+      <option value="Career">Career</option>
+      <option value="Events">Events</option>
+
+    </select>
+
+    <select id="imageSubcategory">
+
+      <option value="Others">Others</option>
+      <option value="Yoruba">Yoruba</option>
+      <option value="Igbo">Igbo</option>
+      <option value="Hausa">Hausa</option>
+      <option value="Traditional">Traditional</option>
+      <option value="Moments">Moments</option>
+      <option value="Dad and Son">Dad and Son</option>
+      <option value="Dad and Daughter">Dad and Daughter</option>
+      <option value="Mum and Daughter">Mum and Daughter</option>
+      <option value="Mum and Son">Mum and Son</option>
+      <option value="Engineer">Engineer</option>
+      <option value="Lawyer">Lawyer</option>
+      <option value="Nurse">Nurse</option>
+      <option value="Doctor">Doctor</option>
+      <option value="Couple">Couple</option>
+      <option value="Bride">Bride</option>
+      <option value="Girls">Girls</option>
+      <option value="Boys">Boys</option>
+      <option value="Women">Women</option>
+      <option value="Men">Men</option>
+      <option value="Parents">Parents</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Family">Family</option>
+      <option value="Portrait">Portrait</option>
+      <option value="Career">Career</option>
+      <option value="Groom">Groom</option>
+      <option value="Friends">Friends</option>
+      <option value="Concert">Concert</option>
+
+    </select>
+
+    <input
+      type="file"
+      id="imageUpload"
+      accept="image/*"
+    >
+
+    <button onclick="uploadImage()">
+      Upload Image
+    </button>
+
+  </div>
+
+</div>
+
+<hr>
+
+<div class="chart-box">
+  
+  <div class="upload-area">
+   <h3>Upload Video</h3>
+
+   <select id="videoCategory">
+
+    <option value="Wedding">Wedding</option>
+    <option value="Birthday">Birthday</option>
+    <option value="Portraits">Portraits</option>
+    <option value="Family">Family</option>
+    <option value="Lifestyle">Lifestyle</option>
+    <option value="Events">Events</option>
+
+  </select>
+
+  <input type="file"
+  id="videoUpload"
+  accept="video/*">
+
+  <button onclick="uploadVideo()">
+    Upload Video
+  </button>
+
+ </div>
+ </div>
+<div class="chart-box">
+
+</div>
+
+<div class="chart-box">
+
+  <h2>Recent Uploads</h2>
+
+  <div class="recent-grid" id="recentUploads"></div>
+
+</div>
+
+    </div>
+
+    <!-- DELETE -->
+    <div id="delete" class="dash-page">
+
+      <div class="chart-box">
+
+        <h2>Delete Uploads</h2>
+
+        <div id="deleteList"></div>
+
+      </div>
+
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="settings" class="dash-page">
+
+      <div class="chart-box">
+
+        <h2>Edit About Page</h2>
+
+        <textarea id="aboutInput"></textarea>
+
+        <button onclick="updateAbout()">
+          Save Changes
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</section>
+
+<!-- ================= IMAGE VIEWER ================= -->
+<div id="viewer">
+
+  <span onclick="closeViewer()">
+    <i class="fa-solid fa-xmark"></i>
+  </span>
+
+  <img id="viewerImg">
+
+ </div>
+<script src="diverse2.js"></script>
+
+
+</body>
+</html>
